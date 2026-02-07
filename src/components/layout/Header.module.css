@@ -1,0 +1,13 @@
+.header {
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+  max-height: 40px;
+    width: auto;
+}

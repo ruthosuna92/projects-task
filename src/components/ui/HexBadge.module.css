@@ -1,0 +1,32 @@
+.hexBadge {
+  width: 32px;            
+  height: 38px; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+    border-radius: 4px;
+clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hexBadge > svg {
+  stroke: currentColor;
+}
+
+.hexBadge > * {
+  color: currentColor;
+}
+
+.primary {
+  background-color: var(--color-brand-primary);
+}
