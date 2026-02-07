@@ -1,16 +1,12 @@
-import { selectTotalResultsCount } from "@/lib/projectSelectors/projectSelectors"
-import { useProjects } from "@/store/useProjectsStore"
-
+import { useProjects } from "@/store/useProjectsStore";
+import ProjectsTitle from "./ProjectsTitle";
 
 export default function ProjectsHeader() {
+  console.log(useProjects().projectsById);
 
-    console.log(useProjects().projectsById)
-
-    const totalProjects = selectTotalResultsCount(useProjects.getState())
-    return (
-        <section>
-            <h1>Mis proyectos</h1>
-            <p>{totalProjects} proyectos</p>
-        </section>
-    )
+  return (
+    <section>
+      <ProjectsTitle />
+    </section>
+  );
 }

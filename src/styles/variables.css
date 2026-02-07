@@ -21,6 +21,8 @@
   /* ========= Borders ========= */
   --color-border: #e5e7eb;
   --color-divider: #f0f0f0;
+  /* ========= Badges ========== */
+  --color-badge-default: #e2e2e2;
 
   /* ========= Accent ========= */
   --color-accent: #0082fa;

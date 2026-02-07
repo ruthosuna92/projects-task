@@ -1,0 +1,12 @@
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.titleContainer h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
