@@ -22,40 +22,58 @@ export interface ProjectsState {
   sort: SortOptions;
   view: ViewOptions;
   selectedProjectId: string | null;
-  // Actions:
+
+  page: number;
+  pageSize: number;
+
   setProjects: (projects: Project[]) => void;
   setSearch: (value: string) => void;
   setSort: (sort: SortOptions) => void;
   setSelectedProjectId: (id: string | null) => void;
   setView: (view: ViewOptions) => void;
+
+  setPage: (page: number) => void;
+  setPageSize: (pageSize: number) => void;
+
   resetUI: () => void;
 }
 
 export const useProjects = create<ProjectsState>((set) => ({
-  projectsById: {} ,
-  projectsIds: [] ,
+  projectsById: {},
+  projectsIds: [],
   search: "",
   sort: SortOptions.Default,
   view: ViewOptions.Table,
-    selectedProjectId: null,
-// Actions:
-setProjects: (projects: Project[]) =>
+  selectedProjectId: null,
+
+  page: 1,
+  pageSize: 10,
+
+  setProjects: (projects: Project[]) =>
     set(() => ({
-        projectsById: projects.reduce<Record<string, Project>>((acc, project) => {
-            acc[project.id] = project;
-            return acc;
-        }, {}),
-        projectsIds: projects.map((project) => project.id),
+      projectsById: projects.reduce<Record<string, Project>>((acc, project) => {
+        acc[project.id] = project;
+        return acc;
+      }, {}),
+      projectsIds: projects.map((project) => project.id),
+      page: 1, // importante: cuando cargan data, arranca en 1
     })),
-setSearch: (value: string) => set({ search: value }),
-setSort: (sort: SortOptions) => set({ sort }),
-setSelectedProjectId: (id: string | null) => set({ selectedProjectId: id }),
-setView: (view: ViewOptions) => set({ view }),
-resetUI: () =>
-  set({
-    search: "",
-    sort: SortOptions.Default,
-    selectedProjectId: null,
-    view: ViewOptions.Table,
-  }),
+
+  setSearch: (value: string) => set({ search: value, page: 1 }),
+  setSort: (sort: SortOptions) => set({ sort, page: 1 }),
+  setSelectedProjectId: (id: string | null) => set({ selectedProjectId: id }),
+  setView: (view: ViewOptions) => set({ view }),
+
+  setPage: (page: number) => set({ page }),
+  setPageSize: (pageSize: number) => set({ pageSize, page: 1 }),
+
+  resetUI: () =>
+    set({
+      search: "",
+      sort: SortOptions.Default,
+      selectedProjectId: null,
+      view: ViewOptions.Table,
+      page: 1,
+      pageSize: 10,
+    }),
 }));

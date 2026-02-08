@@ -13,9 +13,28 @@
   line-height: 1;
 
   cursor: pointer;
-
   border: none;
   transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md {
+  height: 40px;
+  padding: 0 1rem;
+  font-size: 14px;
+}
+
+.sm {
+  height: 32px;
+  min-width: 32px;
+  padding: 0 0.5rem;
+  font-size: 13px;
+}
+
+.round {
+  border-radius: 9999px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 32px;
 }
 
 .primary {

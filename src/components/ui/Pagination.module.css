@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pages {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ellipsis {
+  display: inline-flex;
+  align-items:end;
+  justify-content: center;
+  height: 32px;
+  min-width: 32px;
+  padding: 0 6px;
+  color: var(--color-text-secondary);
+  user-select: none;
+}

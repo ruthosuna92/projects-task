@@ -25,7 +25,7 @@ export default function TeamHexBadges({ team }: TeamHexBadgesProps) {
       ))}
 
       {remainingCount > 0 ? (
-        <HexBadge size="sm" className={styles.badge}>+{remainingCount}</HexBadge>
+        <HexBadge size="sm" className={styles.badge}>{remainingCount}+</HexBadge>
       ) : null}
     </div>
   );

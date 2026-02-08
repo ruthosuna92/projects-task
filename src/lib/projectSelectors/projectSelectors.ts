@@ -77,3 +77,9 @@ export const selectVisibleProjects = (state: ProjectsState, page: number, pageSi
 export const selectTotalResultsCount = (state: ProjectsState): number => {
     return selectSortedProjectIds(state).length;
 }
+
+export const selectTotalPages = (state: ProjectsState): number => {
+  const totalResults = selectTotalResultsCount(state);
+  const pageSize = state.pageSize || 1;
+  return Math.max(1, Math.ceil(totalResults / pageSize));
+};

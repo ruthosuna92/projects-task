@@ -9,35 +9,26 @@ type ProjectsTableRowProps = {
 };
 
 export default function ProjectsTableRow({ project }: ProjectsTableRowProps) {
-
   return (
     <tr className={styles.row}>
-     <td className={styles.td}>
-  <div className={styles.projectCell}>
-    <div className={styles.projectImage}>
-     
-    </div>
+      <td className={styles.td}>
+        <div className={styles.projectCell}>
+          <div className={styles.projectImage}></div>
 
-    <div className={styles.projectInfo}>
-      <div className={styles.projectNameRow}>
-        <span className={styles.projectName}>
-          {project.name}
-        </span>
-      </div>
+          <div className={styles.projectInfo}>
+            <div className={styles.projectNameRow}>
+              <span className={styles.projectName}>{project.name}</span>
+            </div>
 
-      <div className={styles.projectMeta}>
-        <Clock size={10}/>
-        <span>
-          {project.createdAt}
-        </span>
-        <RefreshCcw size={10} />
-        <span>
-          {project.lastUpdated}
-        </span>
-      </div>
-    </div>
-  </div>
-</td>
+            <div className={styles.projectMeta}>
+              <Clock size={10} />
+              <span>{project.createdAt}</span>
+              <RefreshCcw size={10} />
+              <span>{project.lastUpdated}</span>
+            </div>
+          </div>
+        </div>
+      </td>
       <td className={styles.td}>
         {project.plan === "big" ? (
           <Badge variant="primary">Grande</Badge>
@@ -62,10 +53,33 @@ export default function ProjectsTableRow({ project }: ProjectsTableRowProps) {
           <Badge variant="error">Suspendido</Badge>
         )}
       </td>
-     <td className={styles.td}>
-  <TeamHexBadges team={project.team} />
-</td>
-      <td className={styles.td}>Items</td>
+      <td className={styles.td}>
+        <TeamHexBadges team={project.team} />
+      </td>
+      <td className={styles.td}>
+        <div className={styles.expiringItems}>
+          <div className={styles.expiringItem}>
+            <span className={styles.expiringValue}>
+              {project.expiringItems.incidents}
+            </span>
+            <span className={styles.expiringLabel}>Incidencias</span>
+          </div>
+
+          <div className={styles.expiringItem}>
+            <span className={styles.expiringValue}>
+              {project.expiringItems.rfi}
+            </span>
+            <span className={styles.expiringLabel}>RFI</span>
+          </div>
+
+          <div className={styles.expiringItem}>
+            <span className={styles.expiringValue}>
+              {project.expiringItems.tasks}
+            </span>
+            <span className={styles.expiringLabel}>Tareas</span>
+          </div>
+        </div>
+      </td>
     </tr>
   );
 }

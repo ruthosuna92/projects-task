@@ -10,8 +10,9 @@ import ProjectsTableRow from "./ProjectsTableRow";
 export default function ProjectsTable() {
   const projectsState = useProjects();
 
-  const page = 1;
-  const pageSize = 10;
+  const page = useProjects((s) => s.page);
+  const pageSize = useProjects((s) => s.pageSize);
+
 
   const visibleProjects = selectVisibleProjects(
     projectsState,

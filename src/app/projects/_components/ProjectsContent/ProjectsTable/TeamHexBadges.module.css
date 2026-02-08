@@ -6,12 +6,12 @@
 
 .badge {
   position: relative;
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .badge:not(:first-child) {
-  margin-left: -4px;
+  margin-left: -2px;
 }
 
 .badge:nth-child(1) {

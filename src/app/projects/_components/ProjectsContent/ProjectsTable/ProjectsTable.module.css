@@ -106,3 +106,27 @@
 .metaSeparator {
   opacity: 0.6;
 }
+
+.expiringItems {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.expiringItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  line-height: 1.2;
+}
+
+.expiringValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.expiringLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}

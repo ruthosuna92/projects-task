@@ -5,13 +5,12 @@
   color: var(--color-text-primary);
   border-radius: 4px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-
   font-size: 12px;
   font-weight: 600;
 }
 .sm {
-    width: 21px;
-  height: 25px;
+    width: 30px;
+  height: 34px;
 }
 .md{
     width: 32px;
