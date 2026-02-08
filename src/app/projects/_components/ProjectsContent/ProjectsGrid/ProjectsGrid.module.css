@@ -1,0 +1,86 @@
+/* Grid wrapper */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+
+  padding-top: 16px;
+}
+
+/* Card */
+.card {
+  background-color: var(--color-bg-surface);
+  border-radius: 8px;
+  padding: 16px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+/* Plan badge placeholder (puedes reemplazar por Badge luego) */
+.plan {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background-color: var(--color-bg-soft);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Status */
+.status {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+/* Expiring items */
+.meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.meta > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+
+  padding: 8px 0;
+  border-radius: 6px;
+  background-color: var(--color-bg-soft);
+}
+
+.meta strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.meta span {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}

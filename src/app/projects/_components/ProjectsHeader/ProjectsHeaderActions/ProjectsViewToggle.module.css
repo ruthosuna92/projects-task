@@ -1,0 +1,50 @@
+.viewToggle {
+  display: inline-flex;
+  align-items: center;
+
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  overflow: hidden; /* clave para que los bordes internos no se salgan */
+}
+
+/* Cada botón */
+.viewToggleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: none;
+  border: none;
+
+  color: var(--color-text-secondary);
+  cursor: pointer;
+
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Separador visual entre botones */
+.viewToggleButton + .viewToggleButton {
+  border-left: 1px solid var(--color-border);
+}
+
+/* Hover */
+.viewToggleButton:hover {
+  background-color: var(--color-bg-soft);
+}
+
+/* Estado activo */
+.viewToggleButton[aria-pressed="true"] {
+  background-color: var(--color-bg-soft);
+  color: var(--color-text-primary);
+}
+
+/* Focus accesible */
+.viewToggleButton:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: -2px;
+}

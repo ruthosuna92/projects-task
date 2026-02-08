@@ -3,7 +3,7 @@ import styles from "./Badge.module.css"
 
 interface BadgeProps {
     children: React.ReactNode;
-    variant?: "default" | "active" | "orange" | "darkGray" | "primary";
+    variant?: "default" | "active" | "orange" | "darkGray" | "primary" | "error";
 }
 
 export default function Badge({ variant = "default", children}: BadgeProps){

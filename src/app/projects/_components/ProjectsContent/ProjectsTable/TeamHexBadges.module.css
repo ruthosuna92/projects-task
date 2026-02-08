@@ -1,0 +1,36 @@
+.teamBadges {
+  display: inline-flex;
+  align-items: center;
+  isolation: isolate;
+}
+
+.badge {
+  position: relative;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.badge:not(:first-child) {
+  margin-left: -4px;
+}
+
+.badge:nth-child(1) {
+  background-color: var(--primary-100);
+  z-index: 5;
+}
+.badge:nth-child(2) {
+  background-color: var(--primary-200);
+  z-index: 4;
+}
+.badge:nth-child(3) {
+  background-color: var(--primary-300);
+  z-index: 3;
+}
+.badge:nth-child(4) {
+  background-color: var(--primary-400);
+  z-index: 2;
+}
+.badge:nth-child(5) {
+  background-color: var(--primary-500);
+  z-index: 1;
+}

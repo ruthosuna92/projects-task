@@ -6,6 +6,12 @@
   /* ========= Brand ========= */
   --color-brand-primary: #fec510;
   --color-brand-primary-hover: #eeb702;
+  --primary-100: #fff5d7;
+    --primary-200: #ffecaf;
+    --primary-300: #fed860;
+    --primary-400: #fec510;
+    --primary-500: #eeb702;
+    --primary-600: #967100;
 
   /* ========= Backgrounds ========= */
   --color-bg-page: #f2f2f2;
@@ -21,8 +27,11 @@
   /* ========= Borders ========= */
   --color-border: #e5e7eb;
   --color-divider: #f0f0f0;
+
   /* ========= Badges ========== */
   --color-badge-default: #e2e2e2;
+  --color-badge-bg-active: #dff1df;
+--color-badge-bg-dark-gray: #707275;
 
   /* ========= Accent ========= */
   --color-accent: #0082fa;

@@ -1,5 +1,5 @@
 
-interface TeamMember {
+export interface TeamMember {
     name: string;
     lastName: string;
 }
@@ -44,5 +44,7 @@ export type Project = {
         city: string;
         address: string;
     }
-    imageUrl?: string;
+    imageUrl: string | null;
+    createdAt: string;
+    lastUpdated: string;
 };

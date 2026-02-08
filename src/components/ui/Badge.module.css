@@ -1,9 +1,9 @@
 /* "default" | "active" | "orange" | "darkGray" | "primary" */
 
 .badge {
-    padding: 0.25rem 0.75rem;
+    padding: 0.15rem 0.45rem;
     border-radius: 9999px;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 500;
     display: inline-block;
 }
@@ -14,20 +14,25 @@
 }
 
 .active {
-    background-color: #dff1df;
-    color: #067c29;
+    background-color: var(--color-badge-bg-active);
+    color: var(--color-success);
 }
 .orange {
-    background-color: #cf4920;
-    color: #ffffff;
+    background-color: var(--color-map-marker-active);
+    color: var(--color-text-inverse)
 }
 
 .darkGray {
-    background-color: #707275;
-    color: #ffffff;
+    background-color: var(--color-badge-bg-dark-gray);
+    color: var(--color-text-inverse);
 }
 
 .primary {
     background-color: var(--color-brand-primary);
     color: var(--color-text-primary);
+}
+
+.error {
+    background-color: #f8d8da;
+    color: #c21923;
 }

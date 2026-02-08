@@ -1,0 +1,77 @@
+
+
+.select {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Trigger button wrapper: the actual button styles live in Button, this is for sizing/alignment */
+.selectTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  /* Ensure icon-only triggers look consistent */
+  padding: 0;
+  border: none;
+}
+
+
+/* Dropdown menu */
+.selectMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+
+  min-width: 220px;
+
+  background-color: var(--color-bg-surface);
+  border-radius: 8px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
+
+  /* Prevent layout shifts when close to edges */
+  overflow: hidden;
+}
+
+/* Item */
+.selectItem {
+  width: 100%;
+  padding: 10px 16px;
+
+  background: none;
+  border: none;
+
+  text-align: left;
+  font-size: 14px;
+  color: var(--color-text-primary);
+
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.selectItem:hover {
+  background-color: var(--color-bg-soft);
+}
+
+.selectItem:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: -2px;
+}
+
+/* Selected state via aria */
+.selectItem[aria-checked="true"] {
+  background-color: var(--color-bg-soft);
+  font-weight: 600;
+}
+
+/* Disabled state via aria */
+.selectItem[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

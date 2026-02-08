@@ -1,0 +1,71 @@
+import styles from "./ProjectsTable.module.css";
+import { ProjectStatus, type Project } from "@/types/projects";
+import { Clock, RefreshCcw } from "lucide-react";
+import Badge from "@/components/ui/Badge";
+import TeamHexBadges from "./TeamHexBadges";
+
+type ProjectsTableRowProps = {
+  project: Project;
+};
+
+export default function ProjectsTableRow({ project }: ProjectsTableRowProps) {
+
+  return (
+    <tr className={styles.row}>
+     <td className={styles.td}>
+  <div className={styles.projectCell}>
+    <div className={styles.projectImage}>
+     
+    </div>
+
+    <div className={styles.projectInfo}>
+      <div className={styles.projectNameRow}>
+        <span className={styles.projectName}>
+          {project.name}
+        </span>
+      </div>
+
+      <div className={styles.projectMeta}>
+        <Clock size={10}/>
+        <span>
+          {project.createdAt}
+        </span>
+        <RefreshCcw size={10} />
+        <span>
+          {project.lastUpdated}
+        </span>
+      </div>
+    </div>
+  </div>
+</td>
+      <td className={styles.td}>
+        {project.plan === "big" ? (
+          <Badge variant="primary">Grande</Badge>
+        ) : (
+          <Badge variant="orange">Pequeño</Badge>
+        )}
+      </td>
+      <td className={styles.td}>
+        {project.status === ProjectStatus.Active && (
+          <Badge variant="active">Activo</Badge>
+        )}
+
+        {project.status === ProjectStatus.Pending && (
+          <Badge variant="default">Pago pendiente</Badge>
+        )}
+
+        {project.status === ProjectStatus.Inactive && (
+          <Badge variant="darkGray">Inactivo</Badge>
+        )}
+
+        {project.status === ProjectStatus.Suspended && (
+          <Badge variant="error">Suspendido</Badge>
+        )}
+      </td>
+     <td className={styles.td}>
+  <TeamHexBadges team={project.team} />
+</td>
+      <td className={styles.td}>Items</td>
+    </tr>
+  );
+}

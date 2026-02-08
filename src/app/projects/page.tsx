@@ -6,6 +6,7 @@ import { projects } from "@/lib/dataAdapters";
 import { useEffect } from "react";
 import { useProjects } from "@/store/useProjectsStore";
 import styles from "./page.module.css";
+import ProjectsContent from "./_components/ProjectsContent/ProjectsContent";
 
 export default function ProjectsPage() {
   const setProjects = useProjects((s) => s.setProjects);
@@ -15,10 +16,11 @@ export default function ProjectsPage() {
   }, [setProjects]);
 
   return (
-    <main >
+    <main>
       <Header />
       <section className={styles.section}>
-      <ProjectsHeader />
+        <ProjectsHeader />
+        <ProjectsContent />
       </section>
     </main>
   );
