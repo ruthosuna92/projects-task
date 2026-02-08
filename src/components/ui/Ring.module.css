@@ -1,0 +1,38 @@
+.ringWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  --percentage: 0; 
+  --thickness: 6px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 999px;
+
+  background:
+    conic-gradient(
+      var(--color-error) calc(var(--percentage) * 1%),
+      var(--color-badge-default) 0
+    );
+}
+
+.inner {
+  width: calc(100% - (var(--thickness) * 2));
+  height: calc(100% - (var(--thickness) * 2));
+  border-radius: 999px;
+
+  background-color: var(--color-bg-surface);
+  display: grid;
+  place-items: center;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1;
+}

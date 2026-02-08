@@ -42,6 +42,14 @@
   background-color: var(--color-bg-soft);
 }
 
+.row[data-selected="true"] .td:first-child {
+  box-shadow: inset 4px 0 0 var(--color-brand-primary);
+}
+
+.row[data-selected="true"] {
+  background-color: var(--color-bg-soft);
+}
+
 .td {
   padding: 0 16px;
 

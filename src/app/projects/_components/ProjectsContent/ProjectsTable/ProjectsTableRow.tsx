@@ -3,14 +3,19 @@ import { ProjectStatus, type Project } from "@/types/projects";
 import { Clock, RefreshCcw } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import TeamHexBadges from "./TeamHexBadges";
+import { useProjects } from "@/store/useProjectsStore";
 
 type ProjectsTableRowProps = {
   project: Project;
 };
 
 export default function ProjectsTableRow({ project }: ProjectsTableRowProps) {
+
+  const setSelectedProjectId = useProjects((s) => s.setSelectedProjectId);
+  const selectedProject = useProjects((s)=> s.selectedProjectId)
+  
   return (
-    <tr className={styles.row}>
+    <tr data-selected={selectedProject === project.id ? "true" : "false"} className={styles.row} onClick={() => setSelectedProjectId(project.id)}>
       <td className={styles.td}>
         <div className={styles.projectCell}>
           <div className={styles.projectImage}></div>

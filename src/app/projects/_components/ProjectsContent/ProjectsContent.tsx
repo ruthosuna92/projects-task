@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, FileChartColumn } from "lucide-react";
+import { ChevronLeft, ChevronRight, Presentation } from "lucide-react";
 import ProjectsView from "./ProjectsView";
 import styles from "./ProjectsContent.module.css";
 import ProjectsSidebar from "./ProjectsSidebar/ProjectsSidebar";
@@ -47,7 +47,7 @@ export default function ProjectsContent() {
       onClick={() => setIsSidebarOpen(true)}
       aria-label="Abrir resumen"
     >
-      <FileChartColumn size={18} />
+      <Presentation size={18} />
     </button>
   )}
     </section>
