@@ -1,17 +1,90 @@
+.wrapper {
+  position: relative;
+}
+
 .userMenu {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 10px;
+  border-radius: 10px;
+
+  background: transparent;
+  border: 1px solid transparent;
+
+  color: var(--color-bg-surface);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.userMenu:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .userInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 500;
+  line-height: 1.2;
 }
-.userInfo span {
-    font-size: 12px;
-    font-weight: 300;
+
+.name {
+  font-size: 13px;
+  color: inherit;
+}
+
+.role {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.chevron {
+  margin-left: 4px;
+  opacity: 0.9;
+  color: inherit;
+}
+
+.initials {
+  font-size: 12px;
+  font-weight: 600;
+  color: inherit;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 220px;
+
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  padding: 6px;
+  z-index: 50;
+}
+
+.menuItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 8px;
+
+  color: var(--color-text-primary);
+  background: transparent;
+  border: 1px solid transparent;
+
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.menuItem:hover {
+  background-color: var(--color-bg-soft);
+  border-color: var(--color-border);
 }
