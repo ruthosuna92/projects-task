@@ -34,7 +34,7 @@ export default function UserMenu({ fallbackRole = "Administrador" }: UserMenuPro
     return "Usuario";
   }, [session?.user?.name, session?.user?.email]);
 
-  const role = (session?.user as any)?.role ?? fallbackRole;
+const role = session?.user?.role ?? fallbackRole;
 
   const initials = useMemo(() => getInitials(fullName), [fullName]);
 
