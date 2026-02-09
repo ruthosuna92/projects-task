@@ -10,11 +10,16 @@ import ProjectsContent from "./_components/ProjectsContent/ProjectsContent";
 
 export default function ProjectsPage() {
   const setProjects = useProjects((s) => s.setProjects);
+  const setLoading = useProjects((s) => s.setIsLoading)
 
   useEffect(() => {
+    setLoading(true)
     setProjects(projects);
-  }, [setProjects]);
-
+    setTimeout(()=> {
+      setLoading(false)
+    }, 400)
+  }, [setProjects, setLoading]);
+  
   return (
     <main>
       <Header />

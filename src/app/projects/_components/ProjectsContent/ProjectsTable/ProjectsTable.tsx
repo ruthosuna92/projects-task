@@ -5,6 +5,7 @@ import { useProjects } from "@/store/useProjectsStore";
 import { selectVisibleProjects } from "@/lib/projectSelectors/projectSelectors";
 import ProjectsTableHeader from "./ProjectsTableHeader";
 import ProjectsTableRow from "./ProjectsTableRow";
+import ProjectsTableRowSkeleton from "./ProjectsTableRowSkeleton";
 
 
 export default function ProjectsTable() {
@@ -12,7 +13,7 @@ export default function ProjectsTable() {
 
   const page = useProjects((s) => s.page);
   const pageSize = useProjects((s) => s.pageSize);
-
+  const isLoading = useProjects((s) => s.isLoading);
 
   const visibleProjects = selectVisibleProjects(
     projectsState,
@@ -25,9 +26,13 @@ export default function ProjectsTable() {
       <table className={styles.table}>
         <ProjectsTableHeader />
         <tbody>
-          {visibleProjects.map((project) => (
-            <ProjectsTableRow key={project.id} project={project} />
-          ))}
+           {isLoading
+            ? Array.from({ length: pageSize }).map((_, i) => (
+                <ProjectsTableRowSkeleton key={i} />
+              ))
+            : visibleProjects.map((project) => (
+                <ProjectsTableRow key={project.id} project={project} />
+              ))}
         </tbody>
       </table>
     </div>

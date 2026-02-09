@@ -26,6 +26,8 @@ export interface ProjectsState {
   page: number;
   pageSize: number;
 
+  isLoading: boolean;
+
   setProjects: (projects: Project[]) => void;
   setSearch: (value: string) => void;
   setSort: (sort: SortOptions) => void;
@@ -34,6 +36,8 @@ export interface ProjectsState {
 
   setPage: (page: number) => void;
   setPageSize: (pageSize: number) => void;
+
+  setIsLoading: (loading: boolean) => void;
 
   resetUI: () => void;
 }
@@ -48,6 +52,8 @@ export const useProjects = create<ProjectsState>((set) => ({
 
   page: 1,
   pageSize: 10,
+
+  isLoading: false,
 
   setProjects: (projects: Project[]) =>
     set(() => ({
@@ -66,6 +72,8 @@ export const useProjects = create<ProjectsState>((set) => ({
 
   setPage: (page: number) => set({ page }),
   setPageSize: (pageSize: number) => set({ pageSize, page: 1 }),
+
+    setIsLoading: (loading: boolean) => set({isLoading: loading}),
 
   resetUI: () =>
     set({

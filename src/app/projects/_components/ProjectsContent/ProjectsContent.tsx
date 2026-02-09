@@ -11,7 +11,7 @@ import { useProjects } from "@/store/useProjectsStore";
 import { selectTotalPages } from "@/lib/projectSelectors/projectSelectors";
 
 export default function ProjectsContent() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const projectState = useProjects();
   const page = useProjects((s) => s.page);
   const setPage = useProjects((s) => s.setPage);

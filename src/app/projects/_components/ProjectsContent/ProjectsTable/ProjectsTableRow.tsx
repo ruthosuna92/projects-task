@@ -47,7 +47,7 @@ export default function ProjectsTableRow({ project }: ProjectsTableRowProps) {
           <Badge variant="orange">Pequeño</Badge>
         )}
       </td>
-      <td className={styles.td}>
+      <td className={styles.state}>
         {project.status === ProjectStatus.Active && (
           <Badge variant="active">Activo</Badge>
         )}
