@@ -18,3 +18,22 @@
   background: var(--color-bg-surface);
   border-radius: 8px;
 }
+
+@media (max-width: 1280px) {
+  .mapLayout {
+    height: auto; 
+    min-height: auto;
+  }
+
+  .mapArea {
+    flex: 0 0 auto;
+    height: 50vh;  
+    min-height: 280px;
+  }
+
+  .tableArea {
+    overflow: visible; 
+    flex: 0 0 auto;
+    min-height: 100%;
+  }
+}

@@ -1,4 +1,4 @@
-import { User, UserRound } from "lucide-react";
+import { UserRound } from "lucide-react";
 
 interface UserIconProps {
   name?: string;

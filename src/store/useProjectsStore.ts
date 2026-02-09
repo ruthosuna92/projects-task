@@ -56,7 +56,7 @@ export const useProjects = create<ProjectsState>((set) => ({
         return acc;
       }, {}),
       projectsIds: projects.map((project) => project.id),
-      page: 1, // importante: cuando cargan data, arranca en 1
+      page: 1,
     })),
 
   setSearch: (value: string) => set({ search: value, page: 1 }),

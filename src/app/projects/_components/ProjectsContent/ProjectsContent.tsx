@@ -12,44 +12,63 @@ import { selectTotalPages } from "@/lib/projectSelectors/projectSelectors";
 
 export default function ProjectsContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const projectState = useProjects()
+  const projectState = useProjects();
   const page = useProjects((s) => s.page);
   const setPage = useProjects((s) => s.setPage);
   const totalPages = selectTotalPages(projectState);
+  const view = useProjects((s) => s.view);
 
   return (
-    <section className={styles.container} data-sidebar-open={isSidebarOpen ? "true" : "false"}>
-      <div className={styles.main}>
-        <ProjectsView />
-
-        <div className={styles.paginationWrapper}>
-          <Pagination page={page} pageCount={totalPages} onPageChange={setPage} />
+    <section className={styles.container} data-view={view}>
+      <div
+        className={styles.main}
+        data-sidebar-open={isSidebarOpen ? "true" : "false"}
+      >
+        <div className={styles.viewContainer}>
+          <ProjectsView />
         </div>
+        {isSidebarOpen && (
+          <div
+            className={styles.sidebarBackdrop}
+            onClick={() => setIsSidebarOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+        <aside
+          className={styles.sidebar}
+          data-open={isSidebarOpen ? "true" : "false"}
+        >
+          <button
+            type="button"
+            className={styles.sidebarToggle}
+            onClick={() => setIsSidebarOpen((prev) => !prev)}
+            aria-label={isSidebarOpen ? "Cerrar resumen" : "Abrir resumen"}
+            aria-expanded={isSidebarOpen}
+          >
+            {isSidebarOpen ? (
+              <ChevronRight size={18} aria-hidden="true" />
+            ) : (
+              <ChevronLeft size={18} aria-hidden="true" />
+            )}
+          </button>
+
+          {isSidebarOpen ? <ProjectsSidebar /> : null}
+        </aside>
       </div>
 
-      <aside className={styles.sidebar} data-open={isSidebarOpen ? "true" : "false"}>
+      <div className={styles.paginationWrapper}>
+        <Pagination page={page} pageCount={totalPages} onPageChange={setPage} />
+      </div>
+      {!isSidebarOpen && (
         <button
           type="button"
-          className={styles.sidebarToggle}
-          onClick={() => setIsSidebarOpen((prev) => !prev)}
-          aria-label={isSidebarOpen ? "Cerrar resumen" : "Abrir resumen"}
-          aria-expanded={isSidebarOpen}
+          className={styles.sidebarTab}
+          onClick={() => setIsSidebarOpen(true)}
+          aria-label="Abrir resumen"
         >
-          {isSidebarOpen ? <ChevronRight size={18} aria-hidden="true" /> : <ChevronLeft size={18} aria-hidden="true" />}
+          <Presentation size={18} />
         </button>
-
-        {isSidebarOpen ? <ProjectsSidebar /> : null}
-      </aside>
-       {!isSidebarOpen && (
-    <button
-      type="button"
-      className={styles.sidebarTab}
-      onClick={() => setIsSidebarOpen(true)}
-      aria-label="Abrir resumen"
-    >
-      <Presentation size={18} />
-    </button>
-  )}
+      )}
     </section>
   );
 }

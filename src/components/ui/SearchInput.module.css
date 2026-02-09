@@ -12,7 +12,6 @@
   padding: 0 12px;
 }
 
-/* Input */
 .input {
   flex: 1;
 
@@ -30,7 +29,6 @@
   color: var(--color-text-muted);
 }
 
-/* Icon */
 .icon {
   display: inline-flex;
   align-items: center;
@@ -40,7 +38,6 @@
   margin-left: 8px;
 }
 
-/* Focus state */
 .searchInput:focus-within {
   border-color: var(--color-brand-primary);
   box-shadow: 0 0 0 2px rgba(254, 197, 16, 0.25);

@@ -39,9 +39,6 @@ type RawProject = {
   lastUpdated: string;
 };
 
-const PLACEHOLDER_IMAGE_URL =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23F3F4F6'/%3E%3Cpath d='M18 46l10-12 8 10 6-7 14 19H18z' fill='%239CA3AF'/%3E%3Ccircle cx='24' cy='24' r='5' fill='%23D1D5DB'/%3E%3C/svg%3E";
-
 const isValidHttpUrl = (value: unknown): value is string => {
   if (typeof value !== "string") return false;
   const trimmed = value.trim();

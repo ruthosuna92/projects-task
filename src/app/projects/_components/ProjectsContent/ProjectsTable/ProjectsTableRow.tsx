@@ -26,10 +26,16 @@ export default function ProjectsTableRow({ project }: ProjectsTableRowProps) {
             </div>
 
             <div className={styles.projectMeta}>
+              <div className={styles.projectTime}>
               <Clock size={10} />
               <span>{project.createdAt}</span>
+
+              </div>
+              <div className={styles.projectTime}>
               <RefreshCcw size={10} />
               <span>{project.lastUpdated}</span>
+
+              </div>
             </div>
           </div>
         </div>

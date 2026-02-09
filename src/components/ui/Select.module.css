@@ -5,7 +5,6 @@
   display: inline-flex;
 }
 
-/* Trigger button wrapper: the actual button styles live in Button, this is for sizing/alignment */
 .selectTrigger {
   display: inline-flex;
   align-items: center;
@@ -14,13 +13,10 @@
   width: 36px;
   height: 36px;
 
-  /* Ensure icon-only triggers look consistent */
   padding: 0;
   border: none;
 }
 
-
-/* Dropdown menu */
 .selectMenu {
   position: absolute;
   top: calc(100% + 8px);
@@ -34,12 +30,9 @@
 
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 8px 0;
-
-  /* Prevent layout shifts when close to edges */
   overflow: hidden;
 }
 
-/* Item */
 .selectItem {
   width: 100%;
   padding: 10px 16px;
@@ -64,13 +57,11 @@
   outline-offset: -2px;
 }
 
-/* Selected state via aria */
 .selectItem[aria-checked="true"] {
   background-color: var(--color-bg-soft);
   font-weight: 600;
 }
 
-/* Disabled state via aria */
 .selectItem[aria-disabled="true"] {
   opacity: 0.5;
   cursor: not-allowed;
