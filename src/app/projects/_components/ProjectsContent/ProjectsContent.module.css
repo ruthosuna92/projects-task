@@ -129,6 +129,14 @@
   .sidebarTab {
     top: 5rem;
   }
+
+  .sidebarBackdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 10;
+    display: block;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -140,13 +148,5 @@
 
   .main {
     max-height: 100%;
-  }
-
-  .sidebarBackdrop {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: 10;
-    display: block;
   }
 }

@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Presentation } from "lucide-react";
 import ProjectsView from "./ProjectsView";
 import styles from "./ProjectsContent.module.css";
 import ProjectsSidebar from "./ProjectsSidebar/ProjectsSidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Pagination from "@/components/ui/Pagination";
 import { useProjects } from "@/store/useProjectsStore";
@@ -17,6 +17,18 @@ export default function ProjectsContent() {
   const setPage = useProjects((s) => s.setPage);
   const totalPages = selectTotalPages(projectState);
   const view = useProjects((s) => s.view);
+
+  useEffect(() => {
+  if (isSidebarOpen) {
+    document.body.classList.add("no-scroll");
+  } else {
+    document.body.classList.remove("no-scroll");
+  }
+
+  return () => {
+    document.body.classList.remove("no-scroll");
+  };
+}, [isSidebarOpen]);
 
   return (
     <section className={styles.container} data-view={view}>

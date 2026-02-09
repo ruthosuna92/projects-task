@@ -126,3 +126,7 @@ a {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+body.no-scroll {
+  overflow: hidden;
+}
